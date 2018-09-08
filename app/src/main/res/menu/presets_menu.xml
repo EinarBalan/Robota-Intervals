@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/presetsTabata"
+        android:title="Tabata" />
+    <item
+        android:id="@+id/presets3030"
+        android:title="HIIT 30/30 " />
+    <item
+        android:id="@+id/presetsCircuit"
+        android:title="Circuit" />
+    <item
+        android:id="@+id/presetSevenMinuteWorkout"
+        android:title="Seven Minute Workout" />
+</menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3399ff</color>
+    <color name="colorPrimaryLight">#77bbff</color>
+    <color name="colorPrimaryDark">#2D86DF</color>
+    <color name="colorPrimaryTransparent">#66ccff</color>
+    <color name="colorSecondaryDark">#403c3b</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="navBarColor">#ffffff</color>
+    <color name = "transparent">#00FFFFFF</color>
+    <color name = "lightGrey">#f2f2f2</color>
+    <color name="dividerColor">#d6d6d6</color>
+    <color name ="darkGrey">#c4c4c4</color>
+    <color name="lightTextColor">#808080</color>
+    <color name="colorPrimaryDarkMode">#aae0ff</color>
+    <color name="rippleColor">#33171717</color>
+    <color name="tintDarkDeemphasized">#8064a0db</color>
+    <color name="toastColor">#e64f4f4f</color>
+
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_exercise"
+        android:checked="false"
+        android:icon="@drawable/ic_bookmark_unfilled"
+        android:title="@string/my_workouts" />
+    <item
+        android:id="@+id/nav_timer"
+        android:checked="true"
+        android:icon="@drawable/ic_timer"
+        android:title="@string/timer" />
+    <item
+        android:id="@+id/nav_dash"
+        android:checked="false"
+        android:icon="@drawable/ic_menu"
+        android:title="Suggested" />
+</menu>

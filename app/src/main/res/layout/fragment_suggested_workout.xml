@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".SuggestedWorkoutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                app:cardBackgroundColor="?attr/cardBackgroundColor"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/backButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_back"
+                        android:tint="?attr/tintColor"
+                        android:visibility="visible"
+                        android:scaleX=".95"
+                        android:scaleY=".95"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/moreButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_more"
+                        android:tint="?attr/tintColor"
+                        android:visibility="visible"
+                        android:scaleX=".95"
+                        android:scaleY=".95"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/nameTextView"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="Workout"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/headerTextColor"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Workout Details"
+                android:textAllCaps="true"
+                android:textColor="?attr/textColor"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:cardBackgroundColor="?attr/cardBackgroundColor"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView59">
+
+                <LinearLayout
+                    android:id="@+id/detailsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView59">
+
+                    <TextView
+                        android:id="@+id/textView70"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:drawableLeft="@drawable/ic_description_black_24dp"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="?attr/tintDarkColor"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="16dp"
+                        android:text="Description"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/descriptionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:paddingBottom="8dp"
+                        android:paddingHorizontal="16dp"
+                        android:text="No description found."
+                        android:textColor="?attr/textColor"
+                        android:textSize="14sp" />
+
+                    <View
+                        style="@style/Divider"
+                        android:backgroundTint="?attr/textColor"></View>
+
+                    <TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:drawableLeft="@drawable/prep_timer"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="?attr/tintDarkColor"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="16dp"
+                        android:text="Prep Interval "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/prepTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="48dp"
+                        android:text="0:00"
+                        android:textColor="?attr/textColor"
+                        android:textSize="18sp" />
+
+                    <View
+                        style="@style/Divider"
+                        android:backgroundTint="?attr/textColor"></View>
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:drawableLeft="@drawable/work_timer"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="?attr/tintDarkColor"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="16dp"
+                        android:text="Work Interval "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/workTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="48dp"
+                        android:text="0:00"
+                        android:textColor="?attr/textColor"
+                        android:textSize="18sp" />
+
+                    <View
+                        style="@style/Divider"
+                        android:backgroundTint="?attr/textColor"></View>
+
+                    <TextView
+                        android:id="@+id/textView62"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:drawableLeft="@drawable/rest_timer"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="?attr/tintDarkColor"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="16dp"
+                        android:text="Rest Interval "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/restTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="48dp"
+                        android:text="0:00"
+                        android:textColor="?attr/textColor"
+                        android:textSize="18sp" />
+
+                    <View
+                        style="@style/Divider"
+                        android:backgroundTint="?attr/textColor"></View>
+
+                    <TextView
+                        android:id="@+id/textView63"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:drawableLeft="@drawable/ic_arrow_right"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="?attr/tintDarkColor"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="16dp"
+                        android:text="Cycles "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/cyclesTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="48dp"
+                        android:text="1"
+                        android:textColor="?attr/textColor"
+                        android:textSize="18sp" />
+
+                    <View
+                        style="@style/Divider"
+                        android:backgroundTint="?attr/textColor"></View>
+
+                    <TextView
+                        android:id="@+id/textView64"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:drawableLeft="@drawable/ic_arrow_right"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="?attr/tintDarkColor"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="16dp"
+                        android:text="Sets "
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/setsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="48dp"
+                        android:text="1"
+                        android:textColor="?attr/textColor"
+                        android:textSize="18sp" />
+
+                    <View
+                        style="@style/Divider"
+                        android:backgroundTint="?attr/textColor"></View>
+
+                    <TextView
+                        android:id="@+id/textView65"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:drawableLeft="@drawable/base_timer"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="?attr/tintDarkColor"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="16dp"
+                        android:text="Total Time"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/totalTimeTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/cardBackgroundColor"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="48dp"
+                        android:text="0:00"
+                        android:textColor="?attr/textColor"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal"
+                android:paddingTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView9">
+
+                <Button
+                    android:id="@+id/queueButton"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_seethrough"
+                    android:stateListAnimator="@null"
+                    android:text="Add to Queue"
+                    android:textColor="?attr/tintDarkColor"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/applyButton"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple"
+                    android:layout_marginBottom="8dp"
+                    android:text="Set as Current"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

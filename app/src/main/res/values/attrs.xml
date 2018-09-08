@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="styleable">
+        <attr name="backgroundColor" format="color"/>
+        <attr name="cardBackgroundColor" format="color"/>
+        <attr name="darkerCardBackgroundColor" format="color"/>
+        <attr name="headerTextColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="secondaryTextColor" format="color"/>
+        <attr name="hintTextColor" format="color"/>
+        <attr name="highlightTextColor" format="color"/>
+        <attr name="tintColor" format="color"/>
+        <attr name="tintDarkColor" format="color"/>
+        <attr name="buttonColor" format="color"/>
+        <attr name="descriptionColor" format="color"/>
+        <attr name="dividerColor" format="color"/>
+        <attr name="dividerColorAlt" format="color"/>
+        <attr name="navBarColor" format="color"/>
+        <attr name="difficultyBeginner" format="color"/>
+        <attr name="difficultyIntermediate" format="color"/>
+        <attr name="difficultyProfessional" format="color"/>
+
+    </declare-styleable>
+</resources>

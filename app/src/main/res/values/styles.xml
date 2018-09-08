@@ -1,0 +1,83 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="WorkoutTimerLight" parent="Theme.AppCompat.DayNight.NoActionBar" >
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/lightGrey</item>
+        <item name="android:statusBarColor" >@color/navBarColor</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:colorEdgeEffect">@color/lightGrey</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="backgroundColor">@color/lightGrey</item>
+        <item name="cardBackgroundColor">@color/navBarColor</item>
+        <item name="darkerCardBackgroundColor">#ededed</item>
+        <item name="navBarColor">@color/navBarColor</item>
+        <item name="headerTextColor">@color/colorSecondaryDark</item>
+        <item name="textColor">@color/lightTextColor</item>
+        <item name="secondaryTextColor">#7c7471</item>
+        <item name="highlightTextColor">@color/colorPrimary</item>
+        <item name="hintTextColor">?android:attr/textColorHint</item>
+        <item name="tintColor">@color/colorPrimaryLight</item>
+        <item name="tintDarkColor">#64a0db</item>
+        <item name="buttonColor">@color/navBarColor</item>
+        <item name="descriptionColor">@color/lightGrey</item>
+        <item name="dividerColor">?android:attr/listDivider</item>
+        <item name="dividerColorAlt">?android:attr/listDivider</item>
+        <item name="android:popupMenuStyle">@style/PopupMenuStyle</item>
+        <item name="android:textColor">?attr/headerTextColor</item>
+
+    </style>
+
+    <style name="WorkoutTimerDark" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorAccent">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">#202020</item>
+        <item name="android:statusBarColor" >#303030</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:colorEdgeEffect">#202020</item>
+        <item name="android:navigationBarColor">#000</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="backgroundColor">#202020</item>
+        <item name="cardBackgroundColor">#303030</item>
+        <item name="darkerCardBackgroundColor">#252525</item>
+        <item name="navBarColor">#383838</item>
+        <item name="headerTextColor">@color/lightGrey</item>
+        <item name="textColor">@color/navBarColor</item>
+        <item name="secondaryTextColor">#c9c9c9</item>
+        <item name="highlightTextColor">@color/colorPrimaryLight</item>
+        <item name="hintTextColor">#b2b2b2</item>
+        <item name="tintColor">@color/colorPrimaryLight</item>
+        <item name="tintDarkColor">#64a0db</item>
+        <item name="buttonColor">#383838</item>
+        <item name="descriptionColor">@color/lightTextColor</item>
+        <item name="dividerColor">#202020</item>
+        <item name="dividerColorAlt">@color/lightTextColor</item>
+        <item name="android:popupMenuStyle">@style/PopupMenuStyle</item>
+        <item name="android:textColor">?attr/headerTextColor</item>
+
+
+    </style>
+
+    <style name="Divider" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/dividerColor</item>
+
+    </style>
+
+    <style name="PopupMenuStyle" parent="Base.Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">?attr/cardBackgroundColor</item>
+    </style>
+
+    <style name="DialogStyle" parent="Base.Theme.AppCompat.Dialog.Alert">
+        <item name="android:backgroundTint">?attr/cardBackgroundColor</item>
+        <item name="android:textColor">?attr/headerTextColor</item>
+        <item name="android:textColorPrimary">?attr/secondaryTextColor</item>
+    </style>
+
+    <style name="TransitionStyle" >
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+
+
+
+</resources>

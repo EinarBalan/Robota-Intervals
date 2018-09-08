@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timerFrame02"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="?attr/backgroundColor"
+    tools:context=".TimerFragment2">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="0dp"
+                    android:layout_height="459dp"
+                    app:cardBackgroundColor="?attr/cardBackgroundColor"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:id="@+id/totalTimeProgress"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:progressTint="?attr/tintColor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/timerTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="sans-serif"
+                            android:text="0:00"
+                            android:textColor="?attr/headerTextColor"
+                            android:textSize="132dp"
+                            app:layout_constraintBottom_toTopOf="@+id/totalTimeProgress"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/nameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="140dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="16dp"
+                            android:textAllCaps="true"
+                            android:textColor="?attr/textColor"
+                            android:textSize="14dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/timerTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/repeatsNumberTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:textColor="?attr/textColor"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/nameTextView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/queueTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="150dp"
+                            android:textColor="?attr/textColor"
+                            android:textSize="14dp"
+                            app:layout_constraintEnd_toEndOf="@+id/timerTextView"
+                            app:layout_constraintStart_toStartOf="@+id/timerTextView"
+                            app:layout_constraintTop_toTopOf="@+id/repeatsNumberTextView" />
+
+                        <Button
+                            android:id="@+id/resetTimerButton"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/ripple"
+                            android:elevation="0dp"
+                            android:text="@string/reset"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            app:layout_constrainedWidth="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/startButtonFrame"
+                            app:layout_constraintEnd_toStartOf="@+id/intervalTimeProgress"
+                            app:layout_constraintHorizontal_bias="0.51"
+                            app:layout_constraintHorizontal_chainStyle="spread"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/intervalTimeProgress" />
+
+                        <ProgressBar
+                            android:id="@+id/intervalTimeProgress"
+                            style="?android:progressBarStyleHorizontal"
+                            android:layout_width="92dp"
+                            android:layout_height="92dp"
+                            android:layout_marginBottom="8dp"
+                            android:max="100"
+                            android:progress="0"
+                            android:progressDrawable="@drawable/circle"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/doneButton"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/resetTimerButton"
+                            tools:visibility="visible" />
+
+                        <FrameLayout
+                            android:id="@+id/startButtonFrame"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@+id/intervalTimeProgress"
+                            app:layout_constraintEnd_toEndOf="@+id/intervalTimeProgress"
+                            app:layout_constraintStart_toStartOf="@+id/intervalTimeProgress"
+                            app:layout_constraintTop_toTopOf="@+id/intervalTimeProgress">
+
+                            <android.support.design.widget.FloatingActionButton
+                                android:id="@+id/toggleTimerActionButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:clickable="true"
+                                android:scaleType="center"
+                                android:scaleX="1.1"
+                                android:scaleY="1.1"
+                                android:src="@drawable/ic_play"
+                                android:tint="?attr/tintColor"
+                                app:backgroundTint="?attr/buttonColor"
+                                app:elevation="5dp"
+                                app:fabSize="normal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/timerTextView"
+                                app:rippleColor="#16808080" />
+                        </FrameLayout>
+
+                        <Button
+                            android:id="@+id/doneButton"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/ripple"
+                            android:elevation="0dp"
+                            android:text="@string/edit"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            app:layout_constrainedWidth="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/startButtonFrame"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/intervalTimeProgress"
+                            app:layout_constraintTop_toTopOf="@+id/intervalTimeProgress" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="?attr/cardBackgroundColor"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="35dp"
+                            android:text="@string/set"
+                            android:textAllCaps="true"
+                            android:textColor="?attr/textColor"
+                            android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/setTextView"
+                            app:layout_constraintEnd_toEndOf="@+id/setTextView"
+                            app:layout_constraintStart_toStartOf="@+id/setTextView" />
+
+                        <TextView
+                            android:id="@+id/descriptionTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif"
+                            android:text="@string/prep_interval"
+                            android:textAlignment="center"
+                            android:textColor="?attr/highlightTextColor"
+                            android:textSize="32dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/totalTimeWords"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.498"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/totalTimeWords"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="35dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="@string/total_time"
+                            android:textAllCaps="true"
+                            android:textColor="?attr/textColor"
+                            android:textSize="18dp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@+id/totalTimeText"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/totalTimeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="0:00"
+                            android:textAlignment="textEnd"
+                            android:textColor="?attr/textColor"
+                            android:textSize="30dp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/repTextView"
+                            app:layout_constraintStart_toEndOf="@+id/setTextView" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="35dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/cycle"
+                            android:textAllCaps="true"
+                            android:textColor="?attr/textColor"
+                            android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/repTextView"
+                            app:layout_constraintEnd_toEndOf="@+id/repTextView"
+                            app:layout_constraintStart_toStartOf="@+id/repTextView" />
+
+                        <TextView
+                            android:id="@+id/setTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginStart="36dp"
+                            android:text="0 / 1"
+                            android:textAlignment="viewStart"
+                            android:textColor="?attr/textColor"
+                            android:textSize="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/totalTimeWords"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/repTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="36dp"
+                            android:layout_marginStart="24dp"
+                            android:text="@string/prep"
+                            android:textAlignment="viewStart"
+                            android:textColor="?attr/textColor"
+                            android:textSize="30sp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/totalTimeWords" />
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="?attr/cardBackgroundColor"
+                    app:cardElevation="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="sans-serif"
+                            android:text="@string/workout_summary"
+                            android:textAllCaps="false"
+                            android:textColor="?attr/highlightTextColor"
+                            android:textSize="32sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.473"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/summaryLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+
+                        </LinearLayout>
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
