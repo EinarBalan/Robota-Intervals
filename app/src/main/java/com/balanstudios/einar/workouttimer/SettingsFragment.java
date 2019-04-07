@@ -15,6 +15,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
+import android.widget.Toast;
 
 
 /**
@@ -28,6 +29,7 @@ public class SettingsFragment extends Fragment {
     private Switch darkModeSwitch;
     private Switch descriptionHideSwitch;
     private Button rateButton;
+    private Button amoledButton;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -39,11 +41,16 @@ public class SettingsFragment extends Fragment {
                 case R.id.rateButton:
                     clickRate();
                     break;
+                case R.id.amoledButton:
+                    clickAmoled();
+                    break;
 
 
             }
         }
     };
+
+
 
     private CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
@@ -106,19 +113,23 @@ public class SettingsFragment extends Fragment {
         }
         ((MainActivity) getActivity()).getmMainNav().setVisibility(View.GONE);
 
+
         backButton = v.findViewById(R.id.backButtonSettings); backButton.setOnClickListener(onClickListener);
         volumeSeekBar = v.findViewById(R.id.volumeSeekBar); volumeSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
         vibrationsSwitch = v.findViewById(R.id.vibrationsSwitch); vibrationsSwitch.setOnCheckedChangeListener(onCheckedChangeListener);
         darkModeSwitch = v.findViewById(R.id.darkModeSwitch); darkModeSwitch.setOnCheckedChangeListener(onCheckedChangeListener);
         descriptionHideSwitch = v.findViewById(R.id.descriptionHideSwitch); descriptionHideSwitch.setOnCheckedChangeListener(onCheckedChangeListener);
         rateButton = v.findViewById(R.id.rateButton); rateButton.setOnClickListener(onClickListener);
+        amoledButton = v.findViewById(R.id.amoledButton); amoledButton.setOnClickListener(onClickListener);
 
         volumeSeekBar.setProgress( ((MainActivity) getActivity()).getAlertVolume());
         vibrationsSwitch.setChecked( ((MainActivity) getActivity()).isVibrationEnabled());
         darkModeSwitch.setChecked( ((MainActivity) getActivity()).isDarkModeEnabled());
         descriptionHideSwitch.setChecked( ((MainActivity) getActivity()).isHideDescriptionEnabled());
 
-
+        if (((MainActivity) getActivity()).isDarkModeEnabled()){
+            amoledButton.setVisibility(View.VISIBLE);
+        }
 
         return v;
     }
@@ -136,5 +147,29 @@ public class SettingsFragment extends Fragment {
             startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("http://play.google.com")));
         }
+    }
+
+    private void clickAmoled() {
+            if (((MainActivity) getActivity()).isAmoledModeEnabled()) {
+                ((MainActivity) getActivity()).setAmoledModeEnabled(false);
+                ((MainActivity) getActivity()).saveSettingsData();
+
+                Toast.makeText(getActivity(), "AMOLED Mode Disabled.", Toast.LENGTH_SHORT).show();
+
+                Intent intent = getActivity().getIntent();
+                getActivity().finish();
+                startActivity(intent);
+            }
+            else {
+                ((MainActivity) getActivity()).setAmoledModeEnabled(true);
+                ((MainActivity) getActivity()).saveSettingsData();
+
+                Toast.makeText(getActivity(), "AMOLED Mode Enabled.", Toast.LENGTH_SHORT).show();
+
+                Intent intent = getActivity().getIntent();
+                getActivity().finish();
+                startActivity(intent);
+            }
+
     }
 }

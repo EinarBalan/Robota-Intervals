@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
     public static final String ALERT_VOLUME = "alertVolume";
     public static final String VIBRATION_ENABLED = "vibrationEnabled";
     public static final String DARK_MODE_ENABLED = "darkModeEnabled";
+    public static final String AMOLED_MODE_ENABLED = "amoledModeEnabled";
     public static final String HIDE_DESCRIPTION_ENABLED = "hideDescriptionEnabled";
 
     private BottomNavigationView mMainNav;
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
     private int alertVolume = 100;
     private boolean vibrationEnabled = false;
     private boolean darkModeEnabled = false;
+    private boolean amoledModeEnabled = false;
     private boolean hideDescriptionEnabled = false;
 
 
@@ -95,9 +97,13 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
 
         loadSettingsData();
 
-        if (darkModeEnabled) {
+        if (darkModeEnabled && amoledModeEnabled) {
+            setTheme(R.style.WorkoutTimerAMOLED);
+        }
+        else if (darkModeEnabled){
             setTheme(R.style.WorkoutTimerDark);
-        } else {
+        }
+        else{
             setTheme(R.style.WorkoutTimerLight);
         }
 
@@ -446,6 +452,7 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
         editor.putInt(ALERT_VOLUME, alertVolume);
         editor.putBoolean(VIBRATION_ENABLED, vibrationEnabled);
         editor.putBoolean(DARK_MODE_ENABLED, darkModeEnabled);
+        editor.putBoolean(AMOLED_MODE_ENABLED, amoledModeEnabled);
         editor.putBoolean(HIDE_DESCRIPTION_ENABLED, hideDescriptionEnabled);
         editor.apply();
     }
@@ -456,6 +463,7 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
         alertVolume = sharedPreferences.getInt(ALERT_VOLUME, 100);
         vibrationEnabled = sharedPreferences.getBoolean(VIBRATION_ENABLED, false);
         darkModeEnabled = sharedPreferences.getBoolean(DARK_MODE_ENABLED, false);
+        amoledModeEnabled = sharedPreferences.getBoolean(AMOLED_MODE_ENABLED, false);
         hideDescriptionEnabled = sharedPreferences.getBoolean(HIDE_DESCRIPTION_ENABLED, false);
 
     }
@@ -717,6 +725,14 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
 
     public void setDarkModeEnabled(boolean darkModeEnabled) {
         this.darkModeEnabled = darkModeEnabled;
+    }
+
+    public boolean isAmoledModeEnabled() {
+        return amoledModeEnabled;
+    }
+
+    public void setAmoledModeEnabled(boolean amoledModeEnabled) {
+        this.amoledModeEnabled = amoledModeEnabled;
     }
 
     public ArrayList<Workout> getWorkoutQueue() {

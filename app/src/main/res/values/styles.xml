@@ -56,6 +56,35 @@
 
     </style>
 
+    <style name="WorkoutTimerAMOLED" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorAccent">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">#060606</item>
+        <item name="android:statusBarColor" >#000</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:colorEdgeEffect">#060606</item>
+        <item name="android:navigationBarColor">#000</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="backgroundColor">#000</item>
+        <item name="cardBackgroundColor">#060606</item>
+        <item name="darkerCardBackgroundColor">#000</item>
+        <item name="navBarColor">#080808</item>
+        <item name="headerTextColor">@color/lightGrey</item>
+        <item name="textColor">@color/navBarColor</item>
+        <item name="secondaryTextColor">#c9c9c9</item>
+        <item name="highlightTextColor">@color/colorPrimaryLight</item>
+        <item name="hintTextColor">#b2b2b2</item>
+        <item name="tintColor">@color/colorPrimaryLight</item>
+        <item name="tintDarkColor">#64a0db</item>
+        <item name="buttonColor">#111111</item>
+        <item name="descriptionColor">@color/lightTextColor</item>
+        <item name="dividerColor">#202020</item>
+        <item name="dividerColorAlt">@color/lightTextColor</item>
+        <item name="android:popupMenuStyle">@style/PopupMenuStyle</item>
+        <item name="android:textColor">?attr/headerTextColor</item>
+
+
+    </style>
+
     <style name="Divider" >
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
