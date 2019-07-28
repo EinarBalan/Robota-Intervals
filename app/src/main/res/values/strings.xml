@@ -105,6 +105,11 @@
     <string name="added_to_queue">Added %s to queue</string>
     <string name="set__as_current">Set %s as current workout</string>
     <string name="description_hidden">Description hidden</string>
+    <string name="rate_dialog_title">How are you liking Showerly?</string>
+    <string name="rate_dialog_message">If you\'re enjoying the app, take a minute to leave a rating! I would really appreciate the support :) </string>
+    <string name="rate_dialog_ok">Sure</string>
+    <string name="rate_dialog_cancel">Remind Me Later</string>
+    <string name="rate_dialog_no">No, Thanks</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

@@ -31,6 +31,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -38,9 +39,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import hotchemi.android.rate.AppRate;
+
 import static com.balanstudios.einar.workouttimer.BaseApp.NOTIF_CHANNEL;
 
 public class MainActivity extends AppCompatActivity implements DescriptionDialog.DescriptionDialogListener, QueueClearDialog.QueueDialogListener {
+
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     //shared prefs
     public static final String SHARED_PREFS = "sharedPrefs";
@@ -113,6 +118,9 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
         populateTimers(timers, prepTime, numSets, numCycles, numRepeats, wTime, rTime);
         loadWorkoutData(WORKOUTS);
 
+        //initialize firebase analytics
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         mMainNav = findViewById(R.id.mainNav);
         timerFragment2 = new TimerFragment2();
         exercisesFragment = new ExercisesFragment();
@@ -156,6 +164,13 @@ public class MainActivity extends AppCompatActivity implements DescriptionDialog
 
         clearNotifChannelTimer(mMainNav);
 
+        //prompt for reviews
+        AppRate.with(this)
+                .setInstallDays(5)
+                .setLaunchTimes(3)
+                .setRemindInterval(5)
+                .monitor();
+        AppRate.showRateDialogIfMeetsConditions(this);
 
     }
 

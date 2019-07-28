@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.balanstudios.einar.workouttimer">
 
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-feature android:name="android.hardware.vibrate" android:required="false"></uses-feature>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.vibrate" android:required="false"/>
 
 
     <application
         android:name=".BaseApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_work_icon_small"
+        android:icon="@mipmap/ic_robota_v2"
         android:label="Robota"
-        android:roundIcon="@mipmap/ic_work_icon_small_round"
+        android:roundIcon="@mipmap/ic_robota_v2_round"
         android:supportsRtl="true"
-        android:theme="@style/WorkoutTimerLight">
+        android:theme="@style/WorkoutTimerLight"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -34,7 +37,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"></category>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
 
         </activity>
